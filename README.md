@@ -36,7 +36,7 @@ This script has no mandatory arguments, but you can specify `-v` to view more ve
     chmod +x signNodes.sh
     ```
 
-3. **Run the Script**: Execute the script with the proper info in the arguments. Use `;gitrename` if TextExpander is installed.
+3. **Run the Script**: Execute the script with the proper info in the arguments.
 
     ```bash
     ./signNodes.sh
