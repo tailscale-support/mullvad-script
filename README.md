@@ -1,5 +1,5 @@
 # mullvad-script
-zsh script to automate the signing of Mullvad exit nodes on a tailnet with Tailnet Lock enabled.
+sh script to automate the signing of Mullvad exit nodes on a tailnet with Tailnet Lock enabled. This script is compatible with any system capable of running sh scripts.
 
 ## Overview
 This script has no mandatory arguments, but you can specify `-v` to view more verbose output.
@@ -26,6 +26,7 @@ This script has no mandatory arguments, but you can specify `-v` to view more ve
     scoop install jq
     chocolatey install jq
     ```
+2. **Setup `tailscale` CLI**: The `tailscale` CLI command must be setup properly. The CLI is configured properly by default on Linux. On macOS, follow the instructions here in the [Tailscale documentation](https://tailscale.com/kb/1080/cli?tab=macos) to setup the CLI: [https://tailscale.com/kb/1080/cli](https://tailscale.com/kb/1080/cli).
 
 ## Usage
 1. **Download the Script**: Either clone the repo or copy the contents of the script to a local file.
