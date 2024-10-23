@@ -51,7 +51,7 @@ This script has no mandatory arguments, but you can specify `-v` to view more ve
 2. **Enable Execution Policy**: Open PowerShell as an administrator and run the following command to enable the execution of the script.
 
     ```powershell
-    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+    Set-ExecutionPolicy Unrestricted -Scope CurrentUser
     ```
     You'll receive a the following prompt:  
 
