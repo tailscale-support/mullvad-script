@@ -28,7 +28,7 @@ This script has no mandatory arguments, but you can specify `-v` to view more ve
     ```
 2. **Setup `tailscale` CLI**: The `tailscale` CLI command must be setup properly. The CLI is configured properly by default on Linux. On macOS, follow the instructions here in the [Tailscale documentation](https://tailscale.com/kb/1080/cli?tab=macos) to setup the CLI: [https://tailscale.com/kb/1080/cli](https://tailscale.com/kb/1080/cli).
 
-## Usage - Linux
+## Usage - Linux / macOS
 1. **Download the Script**: Either clone the repo or copy the contents of the script to a local file.
 
 2. **Make the Script Executable**: Navigate to the directory where the script is located and make it executable.
