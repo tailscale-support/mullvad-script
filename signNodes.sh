@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/env bash
 
 # Store the command in a variable
 tsBinary=$(which tailscale)
