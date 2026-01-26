@@ -23,8 +23,8 @@ tsBinary=$(which tailscale)
 		exit 1
 	fi
 
-# Prompt the user to confirm that they want to sign all nodes
-printf "Do you want to sign all Mullvad nodes?\n"
+# Prompt the user to confirm that they want to sign multiple nodes
+printf "Do you want to sign multiple Mullvad nodes?\n"
 printf "Y/y to confirm: "
 read -r choice0
 printf "\n" # To move to a new line after input
