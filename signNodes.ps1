@@ -1,6 +1,6 @@
 $tsBinary = Get-Command -Name tailscale
 
-Write-Output "Do you want to sign all Mullvad nodes?"
+Write-Output "Do you want to sign multiple Mullvad nodes?"
 $choice0 = Read-Host "Y/y to confirm: "
 
 if ($choice0 -eq "Y" -or $choice0 -eq "y") {
