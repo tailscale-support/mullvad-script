@@ -41,7 +41,7 @@ if [ "$choice0" = "Y" ] || [ "$choice0" = "y" ]; then
   lockedNodes=$($tsBinary lock status --json | jq -rc '.FilteredPeers[]')
   # Loop through all locked nodes
   echo "$lockedNodes" | while read -r node; do
-    nodeName=$(echo "$node" | jq -r .Name)
+    nodeName=$(echo "$node" | jq -r .DNSName)
     if echo "$nodeName" | grep -q "^$country.*mullvad\.ts\.net\.$"; then
       printf "Signing node %s\n" "$nodeName"
       $SUDO "$tsBinary" lock sign "$(echo "$node" | jq -r '.NodeKey')"

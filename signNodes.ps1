@@ -17,7 +17,7 @@ if ($choice0 -eq "Y" -or $choice0 -eq "y") {
     $lockedNodes = & $tsBinary lock status --json | ConvertFrom-Json
 
     foreach ($node in $lockedNodes.FilteredPeers) {
-        $nodeName = $node.Name
+        $nodeName = $node.DNSName
         if ($nodeName -match "^$country.*mullvad\.ts\.net\.$") {
             Write-Output "Signing node $nodeName"
             & $tsBinary lock sign $node.NodeKey
