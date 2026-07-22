@@ -1,7 +1,7 @@
 #! /bin/sh
 
 # Store the command in a variable
-tsBinary=$(which tailscale)
+tsBinary=$(command -v tailscale)
 
 # Check if root and whether to use sudo or doas
 	CAN_ROOT=
@@ -38,7 +38,11 @@ if [ "$choice0" = "Y" ] || [ "$choice0" = "y" ]; then
     exit 1
   fi
   # Store all unsigned nodes
-  lockedNodes=$($tsBinary lock status --json | jq -rc '.FilteredPeers[]')
+  lockedNodes=$($tsBinary lock status --json | jq -rc 'if .FilteredPeers then .FilteredPeers[] else empty end')
+  if [ -z "$lockedNodes" ]; then
+    printf "No nodes need signing.\n"
+    exit 0
+  fi
   # Loop through all locked nodes
   echo "$lockedNodes" | while read -r node; do
     nodeName=$(echo "$node" | jq -r .DNSName)

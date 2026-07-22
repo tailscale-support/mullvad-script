@@ -16,6 +16,11 @@ if ($choice0 -eq "Y" -or $choice0 -eq "y") {
 
     $lockedNodes = & $tsBinary lock status --json | ConvertFrom-Json
 
+    if (-not $lockedNodes.FilteredPeers) {
+        Write-Output "No nodes need signing."
+        exit 0
+    }
+
     foreach ($node in $lockedNodes.FilteredPeers) {
         $nodeName = $node.DNSName
         if ($nodeName -match "^$country.*mullvad\.ts\.net\.$") {
